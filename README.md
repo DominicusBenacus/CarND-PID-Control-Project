@@ -1,6 +1,32 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
+## Short Introduction
+
+Goal of this project shall be to implement a PID controller to drive a vehicle through a simulated szenario. Therefore the control gains need to be tuned as good as possible for calculating the best steering angle to keep the vehicle on track.
+
+The cross track error (CTE) for compute the appropriate steering angle was delivert by the udacity car nd simulator.
+
+## PID Control in general
+
+A Proportional–Integral–Derivative controller is a control loop feedback mechanism (controller) commonly used in industrial control systems.
+
+P (Proportionnal coefficient) - It causes the car to steer proportional to the car's distance from the lane center (Cross track error).
+
+I (Integral coefficient) - Used for compensation of systematic bias/offset.
+
+D (Differential coefficient) - Counteracts the P component's tendency to overshoot the center line.
+
+There are different methods to define the optimal control gains to multiply the P,I and D coefficients. For the empirical approach -- tried and error -- worked very well.
+
+I start tuning while calculate only the P coefficient to 0.30 and test. Of course the vehicle overshoots the middle lane line. Next I add the D coefficient and tune it to the value of 3.1.
+
+The result was ok. After some more iterations I add the I gain and tune it to 0.001.
+
+
+Sure, there are another commonly used tuning method called twiddle which was shown in the lesson. More important than a better/automatic tuning method, in this project I think, is to get the understanding of the influence from PID to the vehicle reaction is. 
+
+
 ---
 
 ## Dependencies
